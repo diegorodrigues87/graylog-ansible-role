@@ -29,18 +29,12 @@ graylog_root_timezone:        "UTC"
 graylog_alert_check_interval: 60
 graylog_disable_sigar:        False
 
-# REST
-graylog_rest_listen_uri:              "http://0.0.0.0:9000/api/"
-graylog_rest_transport_uri:           ""
-graylog_rest_enable_cors:             True
-graylog_rest_enable_gzip:             True
-graylog_rest_enable_tls:              False
-graylog_rest_tls_cert_file:           "/path/to/graylog.crt"
-graylog_rest_tls_key_file:            "/path/to/graylog.key"
-graylog_rest_tls_key_password:        "secret"
-graylog_rest_max_header_size:         8192
-graylog_rest_max_initial_line_length: 4096
-graylog_rest_thread_pool_size:        16
+# HTTP
+http_bind_address:            "0.0.0.0:9000"
+http_enable_cors:             True
+http_enable_gzip:             True
+http_max_header_size:         8192
+http_thread_pool_size:        16
 
 # Search
 graylog_elasticsearch_hosts:                            "http://127.0.0.1:9200"
@@ -101,7 +95,7 @@ graylog_content_packs_dir:            "/usr/share/graylog-server/contentpacks"
 graylog_content_packs_auto_load:      ""
 
 # Buffer
-graylog_udp_recvbuffer_sizes:                          1048576
+graylog_udp_recvbuffer_sizes:                          26214400
 graylog_ring_size:                                     65536
 graylog_inputbuffer_ring_size:                         65536
 graylog_inputbuffer_processors:                        2
