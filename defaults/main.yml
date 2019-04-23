@@ -30,11 +30,11 @@ graylog_alert_check_interval: 60
 graylog_disable_sigar:        False
 
 # HTTP
-http_bind_address:            "0.0.0.0:9000"
-http_enable_cors:             True
-http_enable_gzip:             True
-http_max_header_size:         8192
-http_thread_pool_size:        16
+graylog_http_bind_address:            "0.0.0.0:9000"
+graylog_http_enable_cors:             True
+graylog_http_enable_gzip:             True
+graylog_http_max_header_size:         8192
+graylog_http_thread_pool_size:        16
 
 # Search
 graylog_elasticsearch_hosts:                            "http://127.0.0.1:9200"
