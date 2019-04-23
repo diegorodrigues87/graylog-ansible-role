@@ -25,9 +25,9 @@ net:
   bindIp: 0.0.0.0
 
 
-{% if ansible_distribution != "RedHat" or ansible_distribution == "CentOS" %}
+{% if ansible_distribution == "RedHat" or ansible_distribution == "CentOS" %}
 processManagement:
-  fork: false
+  fork: true
   pidFilePath: /var/run/mongodb/mongod.pid  # location of pidfile
   timeZoneInfo: /usr/share/zoneinfo
 {% endif %}
