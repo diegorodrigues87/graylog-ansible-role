@@ -25,7 +25,7 @@ net:
   bindIp: 0.0.0.0
 
 
-{% if ansible_distribution != "RedHat" %}
+{% if ansible_distribution != "RedHat" or ansible_distribution == "CentOS" %}
 processManagement:
   fork: false
   pidFilePath: /var/run/mongodb/mongod.pid  # location of pidfile
