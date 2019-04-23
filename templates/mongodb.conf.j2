@@ -8,8 +8,8 @@ storage:
   dbPath: {{ graylog_mongodb_data_path }}
   journal:
     enabled: true
-  mmapv1:
-    smallFiles: true
+#  mmapv1:
+#    smallFiles: true
 #  engine:
 #  wiredTiger:
 
@@ -22,12 +22,14 @@ systemLog:
 # network interfaces
 net:
   port: 27017
-  bindIp: 127.0.0.1
+  bindIp: 0.0.0.0
 
 
 {% if ansible_distribution != "RedHat" %}
 processManagement:
   fork: false
+  pidFilePath: /var/run/mongodb/mongod.pid  # location of pidfile
+  timeZoneInfo: /usr/share/zoneinfo
 {% endif %}
 
 #security:
