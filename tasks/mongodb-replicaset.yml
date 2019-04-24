@@ -2,7 +2,7 @@
 
 - name: Update mongod.conf with replicaset
   template: 
-    src: mongod.replicaset.conf.j2
+    src: mongodb.replicaset.conf.j2
     dest: /etc/mongod.conf
     owner: "root"
     group: "root"
