@@ -1,0 +1,18 @@
+---
+
+- name: Update mongod.conf with replicaset
+  template: 
+    src: mongod.replicaset.conf.j2
+    dest: /etc/mongod.conf
+    owner: "root"
+    group: "root"
+    mode: 0644
+  notify: "restart mongod"
+
+- name: Create file to initiate replica set
+  template: 
+    src: replSetInit.j2
+    dest: ./replSetInit.js
+
+- name: Initialize the replica set
+  command: mongo ./replSetInit.js

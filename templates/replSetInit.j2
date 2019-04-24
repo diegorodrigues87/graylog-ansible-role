@@ -1,0 +1,9 @@
+rs.initiate()
+
+{% for host in groups['graylog'] %}
+rs.add({ 
+  host: "{{host}}", 
+})
+{% endfor %}
+
+printjson(rs.status())

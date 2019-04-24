@@ -20,6 +20,9 @@
 - include: "mongodb-{{ ansible_os_family }}.yml"
   when: graylog_install_mongodb
 
+- include: "mongodb-replicaset.yml"
+  when: graylog_install_mongodb_replicaset
+
 - include: "java-{{ ansible_os_family }}.yml"
   when: graylog_install_java
 

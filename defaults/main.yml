@@ -165,5 +165,9 @@ graylog_install_mongodb:       True
 graylog_install_nginx:         True
 graylog_install_java:          True
 
+# Configure Replicaset MongoDB
+graylog_install_mongodb_replicaset: False
+replicaSetName:                     "rs01"
+
 # Disable steps which break tests
 graylog_not_testing:           True
