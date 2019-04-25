@@ -3,12 +3,6 @@
 - name: "reload systemd configuration"
   command: "systemctl daemon-reload"
 
-- name: "restart graylog-server"
-  service:
-    name: "graylog-server"
-    state: "restarted"
-    enabled: "yes"
-
 - name: "restart mongod"
   service:
     name: "mongod"

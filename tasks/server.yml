@@ -14,7 +14,6 @@
     owner: "graylog"
     group: "graylog"
     mode: 0644
-  notify: "restart graylog-server"
 
 - name: "Graylog server defaults should be configured"
   template:
@@ -23,7 +22,6 @@
     owner: "graylog"
     group: "graylog"
     mode: 0644
-  notify: "restart graylog-server"
 
 - name: "Graylog server should start after reboot"
   file:
@@ -31,14 +29,3 @@
     state: "absent"
 
 - meta: "flush_handlers"
-
-- name: "Wait for Graylog server to startup"
-  uri:
-    url: "{{ graylog_web_listen_uri }}"
-    status_code: 200
-    validate_certs: False
-  register: result
-  until: result.status == 200
-  retries: 60
-  delay: 5
-  when: graylog_not_testing

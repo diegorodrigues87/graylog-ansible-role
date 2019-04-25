@@ -23,9 +23,6 @@
 - include: "mongodb-replicaset.yml"
   when: graylog_install_mongodb_replicaset
 
-- include: "mongodb-init-replicaset.yml"
-  when: mongodb_init_replicaset_primary
-
 - include: "java-{{ ansible_os_family }}.yml"
   when: graylog_install_java
 
