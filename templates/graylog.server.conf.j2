@@ -329,8 +329,8 @@ retention_strategy = delete
 #            This configuration setting is only used on the first start of Graylog. After that,
 #            index related settings can be changed in the Graylog web interface on the 'System / Indices' page.
 #            Also see http://docs.graylog.org/en/2.3/pages/configuration/index_model.html#index-set-configuration.
-elasticsearch_shards = 4
-elasticsearch_replicas = 0
+elasticsearch_shards = {{ graylog_elasticsearch_shards }}
+elasticsearch_replicas = {{ graylog_elasticsearch_replicas }}
 
 # Prefix for all Elasticsearch indices and index aliases managed by Graylog.
 #

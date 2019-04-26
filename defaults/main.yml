@@ -50,6 +50,8 @@ graylog_elasticsearch_disable_version_check:            True
 graylog_elasticsearch_http_enabled:                     False
 graylog_disable_index_optimization:                     True
 graylog_index_optimization_max_num_segments:            1
+graylog_elasticsearch_shards:                           4
+graylog_elasticsearch_replicas:                         0
 
 # Retention
 graylog_no_retention:                        False
