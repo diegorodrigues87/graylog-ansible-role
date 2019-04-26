@@ -35,6 +35,7 @@ graylog_http_enable_cors:             True
 graylog_http_enable_gzip:             True
 graylog_http_max_header_size:         8192
 graylog_http_thread_pool_size:        16
+graylog_http_external_uri:            ""
 
 # Search
 graylog_elasticsearch_hosts:                            "http://127.0.0.1:9200"
