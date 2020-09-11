@@ -6,7 +6,7 @@
   when: ansible_os_family not in graylog_supported_os_families
 
 - name: "Load OS-family specific vars"
-  include_vars: "{{ ansible_os_family }}.yml"
+  include_vars: "{{ ansible_distribution }}.yml"
 
 - name: "Discover systemd capabilities"
   set_fact:
@@ -18,15 +18,15 @@
         (ansible_distribution == 'Amazon' and ansible_distribution_version is version('2', '>='))
       }}
 
-- include: "mongodb-{{ ansible_os_family }}.yml"
+- include: "mongodb-{{ ansible_distribution }}.yml"
   when: graylog_install_mongodb
 
 - include: "mongodb-replicaset.yml"
   when: graylog_install_mongodb_replicaset
 
-- include: "java-{{ ansible_os_family }}.yml"
+- include: "java-{{ ansible_distribution }}.yml"
   when: graylog_install_java
 
-- include: "setup-{{ ansible_os_family }}.yml"
+- include: "setup-{{ ansible_distribution }}.yml"
 
 - include: "server.yml"
