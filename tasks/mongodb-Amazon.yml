@@ -42,14 +42,6 @@
     mode: 0644
   notify: "restart mongod"
 
-- name: "SELinux port access should be granted for MongoDB"
-  seport:
-    ports: 27017
-    proto: "tcp"
-    setype: "mongod_port_t"
-    state: "present"
-  when: ansible_facts['os_distribution'] != "Amazon"
-
 - meta: "flush_handlers"
 
 - name: "Wait for MongoDB to startup"
