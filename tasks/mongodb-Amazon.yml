@@ -48,7 +48,7 @@
     proto: "tcp"
     setype: "mongod_port_t"
     state: "present"
-  when: ansible_os_family != 'Amazon'
+  when: ansible_facts['os_distribution'] != "Amazon"
 
 - meta: "flush_handlers"
 
