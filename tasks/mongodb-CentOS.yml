@@ -43,6 +43,7 @@
   notify: "restart mongod"
 
 - name: "SELinux port access should be granted for MongoDB"
+  ignore_errors: True
   seport:
     ports: 27017
     proto: "tcp"
